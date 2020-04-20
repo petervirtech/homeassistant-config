@@ -1,0 +1,7 @@
+'1579965617022':
+  alias: New Script
+  sequence:
+  - entity_id: light.tv_links
+    service: light.turn_on
+  - entity_id: light.tv_rechts
+    service: light.turn_on

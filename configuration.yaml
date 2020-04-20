@@ -1,0 +1,54 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+discovery:
+system_health:
+  
+http:
+  base_url: https://virtech.nl:8123
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+zwave:
+  usb_path: /dev/ttyUSB0
+#  usb_path: /dev/ttyUSB-ZStick-5G
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+climate: !include climate.yaml
+recorder: !include recorder.yaml
+speedtestdotnet: !include speedtest.yaml
+
+webostv:
+    name: "woonkamer TV"
+    host: 192.168.1.140
+    #other settings
+    turn_on_action:
+        service: wake_on_lan.send_magic_packet
+        data:
+          mac: "A8:23:FE:94:C3:11"
+    customize:
+      sources:
+        - Live TV
+        - youtube
+        - Plex
+        - Netflix
+        - HDMI 2
+
+
+ffmpeg:
+
+camera:
+  - platform: ffmpeg
+    name: "Camera straat"
+    input: -rtsp_transport tcp -i rtsp://hassio:=tt4XxKWG1rt@192.168.1.2:554/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif
+  - platform: ffmpeg
+    name: "Camera voordeur"
+    input: -rtsp_transport tcp -i rtsp://hassio:=tt4XxKWG1rt@192.168.1.2:554/cam/realmonitor?channel=2&subtype=0&unicast=true&proto=Onvif

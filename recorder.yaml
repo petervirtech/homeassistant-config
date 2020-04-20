@@ -1,0 +1,13 @@
+# save to synology Mariadb
+  purge_keep_days: 5
+  db_url: mysql://hassio:twZIXqCUIGLY@192.168.1.6:3307/hassio?charset=utf8
+#  db_url: mariadb_url
+# exclude:
+#   domains:
+#     - automation
+#     - weblink
+#     - updater
+#   entities:
+#     - sun.sun # Don't record sun data
+#     - sensor.last_boot # Comes from 'systemmonitor' sensor platform
+#     - sensor.date

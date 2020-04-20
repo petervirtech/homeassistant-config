@@ -1,0 +1,59 @@
+- id: '1579508807247'
+  alias: Turn on outside lights when the sun is set
+  description: ''
+  trigger:
+  - event: sunset
+    offset: -00:15
+    platform: sun
+  condition: []
+  action:
+  - device_id: 463b7ec4ac894617b9ce2526195aa201
+    domain: light
+    entity_id: light.buitenlamp
+    type: turn_on
+  - device_id: a1bcc5e90bea4f4db99dbae471d5c79b
+    domain: light
+    entity_id: light.buiten_gang
+    type: turn_on
+- id: '1579965694675'
+  alias: Turn off the outdoor lights when the sun is up
+  description: ''
+  trigger:
+  - event: sunrise
+    platform: sun
+  condition: []
+  action:
+  - device_id: 463b7ec4ac894617b9ce2526195aa201
+    domain: light
+    entity_id: light.buitenlamp
+    type: turn_off
+  - device_id: a1bcc5e90bea4f4db99dbae471d5c79b
+    domain: light
+    entity_id: light.buiten_gang
+    type: turn_off
+- id: '1584985679777'
+  alias: Turn on the indoor lights when the sun is set
+  description: ''
+  trigger:
+  - event: sunset
+    offset: -00:10
+    platform: sun
+  condition: []
+  action:
+  - brightness_pct: 80
+    device_id: c03b291df75a40c689cdafa6863db09d
+    domain: light
+    entity_id: light.keuken
+    type: turn_on
+  - device_id: 091af5dcfb6043978f6eec5f2892c38f
+    domain: light
+    entity_id: light.bol_bank
+    type: turn_on
+  - device_id: fae728042c6e43c08ef75152a95baff3
+    domain: light
+    entity_id: light.tv_links
+    type: turn_on
+  - device_id: 7aa4d0e045594478ab8d8a03b30829a5
+    domain: light
+    entity_id: light.tv_rechts
+    type: turn_on

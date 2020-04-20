@@ -1,0 +1,39 @@
+- platform: gree
+  name: AC Slaapkamer Yannick
+  host: 192.168.1.112
+  port: 7000
+  mac: 'f4:91:1e:66:76:95'
+  target_temp_step: 1
+  #encryption_key: <OPTIONAL: custom encryption key if wifi already configured>
+  #uid: <some kind of device identifier. NOTE: for some devices this is optional>
+  #temp_sensor: <entity id of the EXTERNAL temperature sensor. For example: sensor.bedroom_temperature. NOTE: this attaches an external temperature sensor to your AC. Gree unfortunately doesnt support a "current temperature" on its own.>
+  lights: input_boolean.first_ac_lights
+  #xfan: <OPTIONAL: input_boolean to switch AC xfan mode on/off. For example: input_boolean.first_ac_xfan>
+  #health: <OPTIONAL: input_boolean used to switch the Health option on/off of your first AC. For example: input_boolean.first_ac_health>
+  #sleep: <OPTIONAL: input_boolean to switch AC sleep mode on/off. For example: input_boolean.first_ac_sleep>
+  #powersave: <OPTIONAL: input_boolean to switch AC powersave mode on/off. For example: input_boolean.first_ac_powersave>
+  #eightdegheat: <OPTIONAL: input_boolean used to switch 8 degree heating on/off on your first AC>
+
+- platform: gree
+  name: AC Woonkamer
+  host: 192.168.1.114
+  port: 7000
+  mac: 'f4:91:1e:66:76:2c'
+  target_temp_step: 1
+  lights: input_boolean.first_ac_lights
+ 
+- platform: gree
+  name: AC Slaapkamer ouders
+  host: 192.168.1.116
+  port: 7000
+  mac: 'f4:91:1e:66:76:f9'
+  target_temp_step: 1
+  lights: input_boolean.first_ac_lights
+
+- platform: gree
+  name: AC Slaapkamer Carlijn
+  host: 192.168.1.153
+  port: 7000
+  mac: 'f4:91:1e:66:77:2c'
+  target_temp_step: 1
+  lights: input_boolean.first_ac_lights

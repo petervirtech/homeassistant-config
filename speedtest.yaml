@@ -1,0 +1,10 @@
+# package: speedtest.yaml
+#speedtestdotnet:
+  server_id: 13218  # AS4ALL, Amsterdam
+  scan_interval:
+    minutes: 30  
+  manual: true
+  monitored_conditions:
+    - ping
+    - download
+    - upload
